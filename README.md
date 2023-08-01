@@ -55,7 +55,7 @@ mqtt_user=<MQTT user>
 mqtt_passphrase=<MQTT password>
 mqtt_topic_prefix=<MQTT topic prefix>
 ```
-**Important**: Since the script contains passwords in clear text, protect the script adequately by limiting read permissions to the user who will be executing it.
+**Important**: Since the script contains passwords in clear text, protect the script adequately by strictly limiting read permissions.
 
 ### Function description
 The script works quite simply. The detection of the disconnection and its time is carried out by reading the current interface index. If the index has changed between two read cycles, the date and time are recorded in the form of a timestamp.
@@ -69,3 +69,11 @@ The script works quite simply. The detection of the disconnection and its time i
   
 ### Results
 From the data, any home automation application that supports MQTT (and therefore most of them) can retrieve the information needed for use and/or display it on a dashboard.
+
+### Tested with 
+- Debian Linux 11 Bullseye
+- Ubiquiti USG 3P router (firmware version 4.4.56)
+- UniFi Network Application 7.4.162
+
+### Not tested / not implemented
+- Presence of a second link on WAN2 (fallback or parallel)
