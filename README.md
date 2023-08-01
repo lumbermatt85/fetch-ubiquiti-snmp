@@ -66,7 +66,9 @@ The script works quite simply. The detection of the disconnection and its time i
 - The interface index detected is compared with the last value available on the MQTT server. If a change has been detected, the index and timestamp are updated.
 - The script uses the Jo data processor to create a JSON containing the state of the interface, the volume of download and upload data and is broadcast on the MQTT server. Jo is used to avoid making successive connections and sending all the information at once
 - The cycle resumes after a waiting period: thirty seconds seems to be a good compromise, but it is entirely possible to adjust the value in the script.
-  
+
+The script was written to be run as a background service. With a few modifications, it can be adapted to run periodically as a cron job.
+
 ### Results
 From the data, any home automation application that supports MQTT (and therefore most of them) can retrieve the information needed for use and/or display it on a dashboard.
 
@@ -76,4 +78,4 @@ From the data, any home automation application that supports MQTT (and therefore
 - UniFi Network Application 7.4.162
 
 ### Not tested / not implemented
-- Presence of a second link on WAN2 (fallback or parallel)
+- Presence of a second link on WAN2 (fallback or load balancing)
