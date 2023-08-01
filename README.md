@@ -66,8 +66,6 @@ The script works quite simply. The detection of the disconnection and its time i
 - The interface index detected is compared with the last value available on the MQTT server. If a change has been detected, the index and timestamp are updated.
 - The script uses the Jo data processor to create a JSON containing the state of the interface, the volume of download and upload data and is broadcast on the MQTT server. Jo is used to avoid making successive connections and sending all the information at once
 - The cycle resumes after a waiting period: thirty seconds seems to be a good compromise, but it is entirely possible to adjust the value in the script.
-- 
+  
 ### Results
-From the data, any home automation application that supports MQTT (and therefore most of them) can retrieve the information needed for milking and/or display it on a dashboard.
-
-For example, here with Home Assistant :
+From the data, any home automation application that supports MQTT (and therefore most of them) can retrieve the information needed for use and/or display it on a dashboard.
